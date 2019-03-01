@@ -40,7 +40,7 @@ describe('My First Test', function() {
     // see the scenarios directory
     cy.setupScenario('basic')
 
-    // The application unter test is available at SERVER_PORT
+    // The application under test is available at SERVER_PORT
     cy.visit('http://localhost:'+Cypress.env("SERVER_PORT"))
   })
 })
