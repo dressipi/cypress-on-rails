@@ -33,6 +33,9 @@ module Cypress
       def cypress_cli
         result  = ['yarn', 'run']
         result += ['cypress', configuration.run_mode]
+        if configuration.spec_file
+          result += ['--spec', configuration.spec_file]
+        end
         result += ['--env', "SERVER_PORT=#{configuration.server_port}"]
         result += ['-c', 'videosFolder=spec/cypress/videos,fixturesFolder=spec/cypress/fixtures,integrationFolder=spec/cypress/integrations/,supportFile=spec/cypress/support/setup.js']
         result

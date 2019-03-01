@@ -33,6 +33,10 @@ module Cypress
         'open'
       end
     end
+    
+    def spec_file
+      @args.second
+    end
 
     def load_support
       require "./spec/cypress/cypress_helper"
