@@ -57,9 +57,12 @@ module Cypress
 
         @scenario_bank = ScenarioBank.new
         @scenario_bank.load
-        if block = @scenario_bank[json_from_body(req)['scenario']]
+        scenario = json_from_body(req)['scenario']
+        if block = @scenario_bank[scenario]
           new_context.execute block
-        end
+        else
+          raise "no scenario named '#{scenario}'"
+        end 
       end
 
       def handle_eval(req)
