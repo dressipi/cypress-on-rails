@@ -17,7 +17,8 @@ module Cypress
     private
       def setup_rspec
         require 'rspec/rails'
-        extend RSpec::Mocks::ExampleMethods
+        require 'rspec/mocks'
+        extend ::RSpec::Mocks::ExampleMethods
       end
   end
 end
